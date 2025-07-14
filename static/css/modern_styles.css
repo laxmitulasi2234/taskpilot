@@ -1,0 +1,156 @@
+/* ---------------------- */
+/* 🎨 Theme Color Variables */
+/* ---------------------- */
+:root {
+    --bg: #ffffff;
+    --text: #111111;
+    --card-bg: #f8f9fa;
+    --input-bg: #ffffff;
+    --border-color: #dee2e6;
+    --btn-primary: #0069ed;
+    --btn-danger: #dc3545;
+    --btn-warning: #ffc107;
+    --btn-success: #28a745;
+}
+
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #f1f1f1;
+    --card-bg: #1e1e1e;
+    --input-bg: #2a2a2a;
+    --border-color: #444;
+    --btn-primary: #339af0;
+    --btn-danger: #ff6b6b;
+    --btn-warning: #ffd43b;
+    --btn-success: #51cf66;
+}
+
+/* ---------------------- */
+/* 🌍 Base Elements */
+/* ---------------------- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 40px;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.card, .navbar, .form-control, .form-select, .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ---------------------- */
+/* ✏️ Inputs and Form Elements */
+/* ---------------------- */
+input, select, textarea {
+    background-color: var(--input-bg);
+    color: var(--text);
+}
+
+/* ---------------------- */
+/* 🧩 Buttons */
+/* ---------------------- */
+.btn {
+    font-weight: 500;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--btn-primary);
+    border-color: var(--btn-primary);
+}
+
+.btn-danger {
+    background-color: var(--btn-danger);
+    border-color: var(--btn-danger);
+}
+
+.btn-warning {
+    background-color: var(--btn-warning);
+    border-color: var(--btn-warning);
+}
+
+.btn-success {
+    background-color: var(--btn-success);
+    border-color: var(--btn-success);
+}
+
+/* ---------------------- */
+/* ✅ Task List Styling */
+/* ---------------------- */
+ul.list-group li {
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+ul.list-group li.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+}
+
+ul.list-group li.overdue {
+    background-color: #f8d7da;
+}
+
+.list-group-item:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------- */
+/* ✨ Animation Effects */
+/* ---------------------- */
+#taskForm {
+    animation: fadeIn 0.6s ease;
+}
+
+.task-sections li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.6s ease-out forwards;
+    animation-delay: calc(var(--order) * 0.1s);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------- */
+/* 🔔 Toasts */
+/* ---------------------- */
+.toast {
+    opacity: 0.95;
+    z-index: 1050;
+}
+
+/* ---------------------- */
+/* 🧼 Global Transitions */
+/* ---------------------- */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

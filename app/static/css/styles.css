@@ -1,0 +1,24 @@
+body {
+    background: linear-gradient(to right, #dbeafe, #ffffff);
+    font-family: 'Poppins', sans-serif;
+    padding: 40px;
+}
+
+.card {
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+    background: #0d6efd;
+    color: white;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.btn-custom:hover {
+    background: #0b5ed7;
+}
+.btn-custom:active {
+    background: #0a58ca;
+}
