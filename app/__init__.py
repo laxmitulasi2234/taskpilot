@@ -20,6 +20,7 @@ def create_app():
     # Import and register blueprints
     from .routes import main
     app.register_blueprint(main)
+    return app
 
     # Setup user loader
     from .models import User, Task
