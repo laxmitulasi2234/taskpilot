@@ -17,20 +17,18 @@ def create_app():
     db.init_app(app)
     login_manager.init_app(app)
 
-    # Import and register blueprints
-    from .routes import main
-    app.register_blueprint(main)
-    return app
-
-    # Setup user loader
+    # Import models (important for db.create_all)
     from .models import User, Task
-
-    @login_manager.user_loader
-    def load_user(user_id):
-        return User.query.get(int(user_id))
 
     # Create database tables
     with app.app_context():
         db.create_all()
 
+    # Register blueprints
+    from .routes import main
+    app.register_blueprint(main)
+# Setup user loader
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
     return app
